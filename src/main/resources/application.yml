@@ -1,0 +1,19 @@
+#以下為為實作cloud時各自設定值
+server:
+  port: 9090
+spring:
+  application:
+#    config server對應的url的GIT才知道要對應哪個屬性檔
+    name: greeting
+  config:
+    import: optional:configserver:http://localhost:8888
+#greeting: Hello
+#greetings:
+#  EN: Hello
+#  ES: Hola
+#  CH: 你好
+eureka:
+  client:
+#    So you have to add the above line if you are changing your default port of the Eureka server. If we don’t do it it will by default try to look for Eureka in the 8761 port number and that will result in an exception and registration failure.
+    service-url:
+      defaultZone: http://localhost:8766/eureka/
