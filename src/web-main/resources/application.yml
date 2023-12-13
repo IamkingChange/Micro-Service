@@ -1,0 +1,11 @@
+server:
+  port: 80  #config server的server.port把這裡蓋過去
+spring:
+  application:
+    #    config server對應的url的GIT才知道要對應哪個屬性檔
+    name: web-demo
+eureka:
+  client:
+    #    So you have to add the above line if you are changing your default port of the Eureka server. If we don’t do it it will by default try to look for Eureka in the 8761 port number and that will result in an exception and registration failure.
+    service-url:
+      defaultZone: http://localhost:8766/eureka/
